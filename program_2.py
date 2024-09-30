@@ -1,13 +1,22 @@
-# Program #2: Math Quiz
-# Write a program that gives simple math quizzes.  The program should display two random numbers to be added, such as
+#Simple Quiz Joseph Rydberg 9/30/2024
+from random import randrange
 
-#     247
 
-# + 129
+def choose_quiz():
+    x = randrange(1, 50)
+    y = randrange(1, 100)
+    print("What is", x, "+", y)
 
-# ------
+    answer = x + y
+    return answer
 
-# The program should allow the student to enter the answer.  
-# If the answer is correct, a message of congratulations should be displayed.  
-# If the answer is incorrect a message showing the correct answer should be displayed.  
-# The program must use a function that accomplishes part of the needed tasks.
+def take_quiz():
+    answer = choose_quiz()
+    guess = float(input())
+
+    if guess == answer:
+        print("Correct")
+    else:
+        print("Incorrect")
+
+take_quiz()
